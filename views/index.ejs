@@ -11,8 +11,12 @@
 </head>
 
 <body>
-    <% if (user) { %>
-        <h1>Bem-vindo, <%= user.username %>!</h1>
+    <header>
+        <h1>MyApp</h1>
+    </header>
+    <main>
+        <% if (user) { %>
+            <h1>Bem-vindo, <%= user.username %>!</h1>
         <form action="/autenticacao/logout" method="POST">
             <input type="submit" value="Sair">
         </form>
@@ -25,6 +29,10 @@
             </p>
 
             <% } %>
+   </main>
+   <footer>
+    <p>&copy; 2027 MyApp. Todos os direitos reservados.</p>
+   </footer>
 </body>
 
 </html>

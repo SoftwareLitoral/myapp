@@ -9,59 +9,67 @@
     <link rel="stylesheet" href="/stylesheets/style.css">
    
    </head>
-     
-    <h1>Caragua. na crista da onda</h1>
-<body>       
-   <div id="login">
-    <% if (locals.errorMessage) { %>
-        <p class="error-message">
-            <%= errorMessage %>
-        </p>
-    <% } %>
-    
 
-        <form action="/autenticacao/login" method="post" class="card">
+<body>
+    <header>
+        <h1>MyApp</h1>
+        <h1>Caragua. na crista da onda</h1>
+    </header>
 
-            <div class="card-header">
+    <main>           
+        <div id="login">
+            <% if (locals.errorMessage) { %>
+                <p class="error-message">
+                    <%= errorMessage %>
+                </p>
+            <% } %>
+        
 
-                <h2>Login</h2>
+            <form action="/autenticacao/login" method="post" class="card">
 
-            </div>
+                <div class="card-header">
 
-            <div class="card-content">
-
-                <div class="card-content-area">
-
-                    <label for="usuario">Usuário</label>
-
-                    <input type="text" id="usuario" name="usernameOrEmail" autocomplete="off">
+                    <h2>Login</h2>
 
                 </div>
 
-                <div class="card-content-area">
+                <div class="card-content">
 
-                    <label for="password">Senha</label>
+                    <div class="card-content-area">
 
-                    <input type="password" id="password" name="password" autocomplete="off"maxlength="10">
+                        <label for="usuario">Usuário</label>
+
+                        <input type="text" id="usuario" name="usernameOrEmail" autocomplete="off">
+
+                    </div>
+
+                    <div class="card-content-area">
+
+                        <label for="password">Senha</label>
+
+                        <input type="password" id="password" name="password" autocomplete="off"maxlength="10">
+
+                    </div>
 
                 </div>
 
-            </div>
+                <div class="card-footer">
 
-            <div class="card-footer">
+                    <input type="submit" value="login" class="submit">
 
-                <input type="submit" value="login" class="submit">
-
-                <a href="#" class="recuperar_senha">Esqueceu a senha?</a><br>
+                    <a href="#" class="recuperar_senha">Esqueceu a senha?</a><br>
+                    
+                    <a href="/usuarios/cadastrar">Cadastrar</a>
                 
-                <a href="/usuarios/cadastrar">Cadastrar</a>
-            
-            </div>
+                </div>
 
-        </form>
+            </form>
 
-    </div>
-    
-   
+        </div>
+    </main>
+    <footer>
+        <p>&copy; 2027 MyApp. Todos os direitos reservados.</p>
+    </footer>
+</body>
 
 </html>

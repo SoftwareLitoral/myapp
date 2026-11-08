@@ -9,16 +9,24 @@
 </head>
 
 <body>
-    <h1>
-        <%= error.message %>
-    </h1>
-    <h2>
-        <%= error.status %>
+    <header>
+        <h1>MyApp</h1>
+    </header>
+    <main>
+        <h1>
+            <%= error.message %>
+        </h1>
+        <h2>
+            <%= error.status %>
     </h2>
     <pre><%= error.stack %></pre>
     <p>
         <a href="/">Entrar</a>
     </p>
+    </main>
+    <footer>
+        <p>&copy; 2027 MyApp. Todos os direitos reservados.</p>
+    </footer>
 </body>
 
 </html>
