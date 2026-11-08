@@ -1,140 +1,450 @@
-body 
-{
+/* =========================================
+   MYAPP - ESTILO GLOBAL
+========================================= */
 
-    padding: 0%;
-
-    margin: 0;
-
-    background-image: url();
-
+:root {
+    --primary: #075985;
+    --primary-dark: #082f49;
+    --secondary: #0891b2;
+    --accent: #f97316;
+    --background: #f1f5f9;
+    --surface: #ffffff;
+    --text: #1e293b;
+    --muted: #64748b;
+    --border: #e2e8f0;
+    --danger: #dc2626;
+    --success: #16a34a;
+    --shadow: 0 8px 25px rgba(15, 23, 42, 0.08);
 }
 
-#login {
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: var(--background);
+    color: var(--text);
+    min-height: 100vh;
     display: flex;
+    flex-direction: column;
+}
 
+/* =========================================
+   CABEÇALHO
+========================================= */
+
+header {
+    background: linear-gradient(
+        135deg,
+        var(--primary-dark),
+        var(--primary),
+        var(--secondary)
+    );
+
+    color: white;
+    padding: 22px 5%;
+    display: flex;
     align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px;
 
-    justify-content: center;
+    box-shadow: var(--shadow);
+}
 
-    height: 100vh;
+header h1 {
+    font-size: 25px;
+    font-weight: 700;
+}
 
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+header h1:last-child {
+    font-size: 16px;
+    font-weight: 400;
+    color: #bae6fd;
+}
 
+/* =========================================
+   CONTEÚDO PRINCIPAL
+========================================= */
+
+main {
+    width: 100%;
+    max-width: 1200px;
+    margin: 35px auto;
+    padding: 0 20px;
+    flex: 1;
+}
+
+main > h1 {
+    font-size: 28px;
+    color: var(--primary-dark);
+    margin-bottom: 25px;
+}
+
+h2 {
+    color: var(--primary-dark);
+    margin-bottom: 15px;
+}
+
+/* =========================================
+   LOGIN
+========================================= */
+
+#login {
+    width: 100%;
+    max-width: 420px;
+    margin: 30px auto;
 }
 
 .card {
-
-    background-color: rgba(49, 247, 32, 0.925);
-
-    padding: 40px;
-
-    border-radius: 2px;
-
-    width:280px;
-
+    background: var(--surface);
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    border: 1px solid var(--border);
 }
 
 .card-header {
+    background: linear-gradient(
+        135deg,
+        var(--primary-dark),
+        var(--primary)
+    );
 
-    padding-bottom: 50px;
-
-    opacity: 1;
-
-    color:  rgb(14, 8, 8);
-
+    padding: 25px;
+    text-align: center;
 }
 
-.card-header::after {
-
-    content: "";
-
-    width: 70px;
-
-    height: 1px;
-
-    background-color: #0e0909;
-
-    display: block;
-
-    margin-top: -17px;
-
-    margin-left: -5px;
-
+.card-header h2 {
+    color: white;
+    margin: 0;
+    font-size: 25px;
 }
 
-.card-content label {
-
-    color: #0e0909;
-
-    font-size: 12px;
-
-    opacity: 0.8;
-
+.card-content {
+    padding: 25px;
 }
 
 .card-content-area {
-
     display: flex;
-
     flex-direction: column;
-
-    padding:10px 0;
-
+    margin-bottom: 20px;
 }
 
-.card-content-area input {
+.card-content-area label {
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: var(--primary-dark);
+}
 
-    margin-top: 10px;
-
-    padding:0 5px;
-
-    background-color: transparent;
-
-    border:none;
-
-    border-bottom: 1px solid #0e0909;
-
+input,
+select,
+textarea {
+    width: 100%;
+    padding: 12px 14px;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    font-size: 15px;
     outline: none;
+    background: white;
+    color: var(--text);
+    transition: 0.2s;
+}
 
-    color: #0e0909;
-
+input:focus,
+select:focus,
+textarea:focus {
+    border-color: var(--secondary);
+    box-shadow: 0 0 0 3px rgba(8, 145, 178, 0.12);
 }
 
 .card-footer {
-
+    padding: 0 25px 25px;
     display: flex;
-
     flex-direction: column;
-
+    gap: 13px;
 }
 
-.card-footer .submit{
+.submit,
+button {
+    background: var(--primary);
+    color: white;
+    border: none;
+    padding: 13px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: bold;
+    transition: 0.2s;
+}
 
-    width: 100%;
-
-    height: 40px;
-
-    background-color: #99eb73;
-
-    border:none;
-
-    color:#0e0909;
-
-    margin: 10px 0;
-
+.submit:hover,
+button:hover {
+    background: var(--secondary);
+    transform: translateY(-1px);
 }
 
 .card-footer a {
-
     text-align: center;
-
-    font-size: 12px;
-
-    opacity: 0.8;
-
-    color: #0e0909;
-
     text-decoration: none;
+    color: var(--primary);
+    font-size: 14px;
+}
 
+.card-footer a:hover {
+    color: var(--accent);
+}
+
+/* =========================================
+   MENSAGENS
+========================================= */
+
+.error-message {
+    background: #fee2e2;
+    color: #991b1b;
+    border: 1px solid #fecaca;
+    padding: 13px;
+    border-radius: 8px;
+    margin-bottom: 18px;
+}
+
+.success-message {
+    background: #dcfce7;
+    color: #166534;
+    border: 1px solid #bbf7d0;
+    padding: 13px;
+    border-radius: 8px;
+    margin-bottom: 18px;
+}
+
+/* =========================================
+   TABELA DE USUÁRIOS
+========================================= */
+
+main:has(table) {
+    max-width: 1400px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: var(--surface);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    font-size: 14px;
+}
+
+thead {
+    background: var(--primary-dark);
+    color: white;
+}
+
+th {
+    padding: 16px 12px;
+    text-align: left;
+    white-space: nowrap;
+}
+
+td {
+    padding: 13px 12px;
+    border-bottom: 1px solid var(--border);
+}
+
+tbody tr:nth-child(even) {
+    background: #f8fafc;
+}
+
+tbody tr:hover {
+    background: #e0f2fe;
+}
+
+tbody tr:last-child td {
+    border-bottom: none;
+}
+
+/* =========================================
+   AÇÕES DA TABELA
+========================================= */
+
+td ul {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 7px;
+}
+
+td ul li a {
+    display: inline-block;
+    padding: 7px 10px;
+    border-radius: 6px;
+    text-decoration: none;
+    color: white;
+    background: var(--primary);
+    font-size: 12px;
+    transition: 0.2s;
+}
+
+td ul li a:hover {
+    background: var(--secondary);
+}
+
+td ul li:nth-child(2) a {
+    background: var(--danger);
+}
+
+td ul li:nth-child(2) a:hover {
+    background: #991b1b;
+}
+
+/* =========================================
+   LINKS GERAIS
+========================================= */
+
+main > p {
+    margin-top: 20px;
+}
+
+main > p a,
+main > ul li a {
+    display: inline-block;
+    text-decoration: none;
+    background: var(--primary);
+    color: white;
+    padding: 11px 17px;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: 0.2s;
+}
+
+main > p a:hover,
+main > ul li a:hover {
+    background: var(--accent);
+}
+
+main > ul {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 25px;
+}
+
+/* =========================================
+   DETALHES E EXCLUSÃO
+========================================= */
+
+main > div {
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+    margin-bottom: 20px;
+}
+
+main > div p {
+    padding: 12px 0;
+    border-bottom: 1px solid var(--border);
+}
+
+main > div p:last-child {
+    border-bottom: none;
+}
+
+form[action*="deletar"] {
+    margin: 20px 0;
+}
+
+form[action*="deletar"] input[type="submit"] {
+    background: var(--danger);
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    max-width: 220px;
+}
+
+form[action*="deletar"] input[type="submit"]:hover {
+    background: #991b1b;
+}
+
+/* =========================================
+   RODAPÉ
+========================================= */
+
+footer {
+    background: var(--primary-dark);
+    color: #cbd5e1;
+    text-align: center;
+    padding: 20px;
+    margin-top: auto;
+    font-size: 14px;
+}
+
+/* =========================================
+   RESPONSIVIDADE
+========================================= */
+
+@media (max-width: 768px) {
+
+    header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    header h1 {
+        font-size: 21px;
+    }
+
+    main {
+        margin: 20px auto;
+        padding: 0 12px;
+    }
+
+    main > h1 {
+        font-size: 23px;
+    }
+
+    main:has(table) {
+        overflow-x: auto;
+    }
+
+    table {
+        min-width: 1000px;
+    }
+
+    #login {
+        margin: 10px auto;
+    }
+
+    main > ul {
+        flex-direction: column;
+    }
+
+    main > ul li a {
+        width: 100%;
+        text-align: center;
+    }
+
+    .card-content {
+        padding: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+
+    header h1 {
+        font-size: 19px;
+    }
+
+    .card-header {
+        padding: 20px;
+    }
+
+    .card-footer {
+        padding: 0 20px 20px;
+    }
 }
